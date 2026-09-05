@@ -1,0 +1,43 @@
+{
+  "name": "haber-bot",
+  "version": "1.0.0",
+  "description": "IHA RSS -> Supabase + Cloudflare R2 haber botu",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "dev": "tsx watch --env-file-if-exists=.env src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test:parser": "tsx src/parser/test-parser.ts",
+    "test:fetch": "tsx src/fetch/test-fetcher.ts",
+    "test:ingest": "tsx src/ingest/test-pipeline.ts",
+    "test:media": "tsx src/media/test-media.ts",
+    "test": "npm run test:parser && npm run test:fetch && npm run test:logger && npm run test:redis && npm run test:ingest && npm run test:media",
+    "test:logger": "tsx src/lib/test-logger.ts",
+    "teshis": "tsx --env-file-if-exists=.env src/teshis.ts",
+    "test:redis": "tsx src/lib/test-redis.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1116.0",
+    "@aws-sdk/lib-storage": "^3.1116.0",
+    "@supabase/supabase-js": "^2.112.3",
+    "blurhash": "^2.0.5",
+    "fast-xml-parser": "^5.11.0",
+    "nodemailer": "^9.0.5",
+    "redis": "^6.2.1",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/nodemailer": "^8.0.1",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

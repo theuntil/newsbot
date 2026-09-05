@@ -1,0 +1,118 @@
+# =============================================================
+#  HABER BOT — Docker Compose (Dokploy)
+#
+#  KAYNAK BÜTÇESİ (8 vCPU / 32 GB PAYLAŞIMLI sunucu):
+#    bot    → 3.5 CPU, 4 GB
+#    redis  → 0.3 CPU, 512 MB
+#    TOPLAM → ~3.8 CPU, ~4.5 GB
+#
+#  Geriye ~4 CPU ve ~27 GB kalır; Supabase ve diğer projelerin
+#  etkilenmez. Bu limitleri KALDIRMA — tek video transcode
+#  8 çekirdeği doldurup tüm sunucuyu kilitleyebilir.
+# =============================================================
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+
+    # Dokploy'da değişkenleri arayüzden giriyorsan env_file'ı
+    # silebilirsin; ikisi birlikte de çalışır (arayüz önceliklidir).
+    env_file:
+      - .env
+
+    environment:
+      NODE_ENV: production
+      REDIS_URL: redis://redis:6379
+      TMP_DIR: /tmp/haberbot
+      HEALTH_PORT: "8080"
+      # Aynı DB'ye bakan instance'ları ayırt etmek için
+      INSTANCE_ID: dokploy-bot-1
+
+    depends_on:
+      redis:
+        condition: service_healthy
+
+    # Geçici dosyalar AYRI volume'de.
+    # Host /tmp'ine yazma: bir hata diski doldurursa Supabase de
+    # yazamaz hale gelir. Buradaki 12 GB sınır sigortadır.
+    volumes:
+      - type: volume
+        source: bot-tmp
+        target: /tmp/haberbot
+
+    deploy:
+      resources:
+        limits:
+          # 8 vCPU'nun yarısı. ffmpeg veryfast'e geçtiği için
+          # aynı CPU ile 2 kat iş çıkıyor; limiti artırmaya gerek yok.
+          cpus: "4.0"
+          memory: 5G
+        reservations:
+          cpus: "0.5"
+          memory: 512M
+
+    # Graceful shutdown için süre. Varsayılan 10 sn; yarım kalan
+    # video transcode bu sürede bitmez ve bozuk dosya kalır.
+    stop_grace_period: 60s
+
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/health"]
+      interval: 60s
+      timeout: 10s
+      start_period: 90s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"
+
+    security_opt:
+      - no-new-privileges:true
+
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 8192
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: >
+      redis-server
+      --maxmemory 384mb
+      --maxmemory-policy allkeys-lru
+      --save ""
+      --appendonly no
+    # Kalıcılık KAPALI: burada sadece hız sınırı sayacı var.
+    # Yeniden başlarsa sıfırdan başlaması sorun değil.
+
+    deploy:
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 512M
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  bot-tmp:
+    driver: local

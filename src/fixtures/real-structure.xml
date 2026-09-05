@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>IHA</title>
+<item>
+  <HaberKodu>20260822AW772685</HaberKodu>
+  <title><![CDATA[Taksiyle geldi, kuyumcu dükkanını kurşunladı]]></title>
+  <description><![CDATA[Küçükçekmece'de bir şahıs ateş açtı.<br/>Olay saat 06.00 sıralarında meydana geldi.<br/>]]></description>
+  <Sehir>İSTANBUL</Sehir>
+  <Kategori>ASAYİŞ</Kategori>
+  <UstKategori>ULUSAL HABER</UstKategori>
+  <SonDakika>Hayır</SonDakika>
+  <pubDate>22.08.2026 23:01:20</pubDate>
+  <SonHaberGuncellenmeTarihi>-</SonHaberGuncellenmeTarihi>
+  <SonFotografEklenmeTarihi>22.08.2026 23:08</SonFotografEklenmeTarihi>
+  <images>
+    <image filesize="126063" HaberKodu="20260822AW772685" ResimKodu="20260822AW772685_01">https://abonerss.iha.com.tr/download.ashx?type=image&amp;param1=ExS7UNab</image>
+  </images>
+  <videos>
+    <video>
+      <Aciklama HaberKodu="20260822AW772685" VideoKodu="1926967"><![CDATA[Taksiyle geldi, kuyumcu dükkanını kurşunladı]]></Aciklama>
+      <path_video duration="47" filesize="4565773" HaberKodu="20260822AW772685" VideoKodu="1926967">https://abonerss.iha.com.tr/download.ashx?type=video&amp;param1=IRO7URaP</path_video>
+      <path_poster HaberKodu="20260822AW772685" VideoKodu="1926967">https://abonerss.iha.com.tr/download.ashx?type=video&amp;param1=IRWPUNOD</path_poster>
+    </video>
+  </videos>
+  <Aciklamalar>
+    <Aciklama HaberKodu="20260822AW772685" ResimKodu="20260822AW772685_01"><![CDATA[KÜÇÜKÇEKMECE'DE BİR ŞAHIS ATEŞ AÇTI (İHA)]]></Aciklama>
+  </Aciklamalar>
+</item>
+</channel></rss>

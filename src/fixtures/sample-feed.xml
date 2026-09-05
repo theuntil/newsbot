@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>IHA Standart RSS</title>
+    <item>
+      <HaberKodu>20260818AW769386</HaberKodu>
+      <title><![CDATA[Marco Asensio Fenerbahçe'ye imza attı]]></title>
+      <description><![CDATA[Fenerbahçe, İspanyol yıldız Marco Asensio ile anlaşma sağladı.<br/>Sarı-lacivertliler, transferi resmi sosyal medya hesaplarından duyurdu.<br/>"Yeni bir sayfa açıyoruz"<br/>Kulüp başkanı yaptığı açıklamada takıma güçlü bir katkı beklediklerini söyledi.<br/>Oyuncu, sağlık kontrolünden geçtikten sonra imzayı attı.]]></description>
+      <UstKategori>SPOR</UstKategori>
+      <Kategori>FUTBOL</Kategori>
+      <Sehir>İSTANBUL</Sehir>
+      <SonDakika>Evet</SonDakika>
+      <pubDate>18.08.2026 02:16:37</pubDate>
+      <SonHaberGuncellenmeTarihi>18.08.2026 02:40</SonHaberGuncellenmeTarihi>
+      <SonFotografEklenmeTarihi>18.08.2026 02:31</SonFotografEklenmeTarihi>
+      <images>
+        <image ResimKodu="R001" filesize="184320" sira="1">https://cdn.iha.com.tr/telifli/foto?type=image&amp;param1=abc123&amp;id=R001</image>
+        <image ResimKodu="R002" filesize="0" sira="2">https://cdn.iha.com.tr/telifli/foto?type=image&amp;param1=def456&amp;id=R002</image>
+      </images>
+      <Aciklamalar>
+        <Aciklama>Marco Asensio imza töreninde (OLGUN YILDIZ/İSTANBUL-İHA)</Aciklama>
+        <Aciklama>Taraftarlar kulüp önünde toplandı (İHA)</Aciklama>
+      </Aciklamalar>
+    </item>
+
+    <item>
+      <HaberKodu>20260817AW769368</HaberKodu>
+      <title><![CDATA[Ardahan'da sokak hayvanları için mama bırakıldı]]></title>
+      <description><![CDATA[Ardahan'da belediye ekipleri sokak hayvanları için doğaya mama bıraktı.<br/>"Onlar Allah'ın dilsiz emanetleri"<br/>Ekipler, kış şartlarında aç kalan hayvanlar için çalışma başlattı.]]></description>
+      <UstKategori>GÜNCEL</UstKategori>
+      <Kategori>YAŞAM</Kategori>
+      <Sehir>ARDAHAN</Sehir>
+      <SonDakika>Hayır</SonDakika>
+      <pubDate>17.08.2026 23:58:09</pubDate>
+      <SonHaberGuncellenmeTarihi>-</SonHaberGuncellenmeTarihi>
+      <SonFotografEklenmeTarihi>18.08.2026 00:11</SonFotografEklenmeTarihi>
+      <images>
+        <image ResimKodu="R010" filesize="0" sira="1">https://cdn.iha.com.tr/telifli/foto?type=image&amp;param1=xyz789&amp;id=R010</image>
+      </images>
+      <Aciklamalar>
+        <Aciklama>Ekipler mama bırakırken (OLGUN YILDIZ/ARDAHAN-İHA)</Aciklama>
+      </Aciklamalar>
+    </item>
+
+    <item>
+      <HaberKodu>20260817AW769379</HaberKodu>
+      <title><![CDATA[Belediye meclisi toplantısı canlı yayınlandı]]></title>
+      <description><![CDATA[Belediye meclisinin ağustos ayı olağan toplantısı gerçekleştirildi.]]></description>
+      <UstKategori>POLİTİKA</UstKategori>
+      <Kategori>YEREL</Kategori>
+      <Sehir>ANKARA</Sehir>
+      <SonDakika>Hayır</SonDakika>
+      <pubDate>17.08.2026 19:05:00</pubDate>
+      <videos>
+        <video VideoKodu="V001" filesize="86011904" sure="855" path_poster="https://cdn.iha.com.tr/telifli/poster?id=V001">https://cdn.iha.com.tr/telifli/video?type=video&amp;param1=vid001&amp;id=V001</video>
+      </videos>
+    </item>
+
+    <item>
+      <HaberKodu>20260817AW769301</HaberKodu>
+      <title><![CDATA[Kazada 1 kişi yaralandı]]></title>
+      <description><![CDATA[16 CCL 150 plakalı araç kontrolden çıktı. Sürücü R.A. (32) hastaneye kaldırıldı.]]></description>
+      <UstKategori>ASAYİŞ</UstKategori>
+      <Kategori>KAZA</Kategori>
+      <Sehir>BURSA</Sehir>
+      <pubDate>17.08.2026 15:22:41</pubDate>
+    </item>
+  </channel>
+</rss>
